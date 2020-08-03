@@ -14,6 +14,9 @@ import UIKit
 #if IMPORT_REACHABILITY
 import Reachability
 #endif
+#if canImport(UIKit)
+import UIKit
+#endif
 
 @objcMembers
 public class Connectivity: NSObject {
