@@ -309,7 +309,7 @@ As of Connectivity 1.1.0, using HTTPS for connectivity URLs is the default setti
 let connectivity = Connectivity(shouldUseHTTPS: false)
 ```
 
-*Note that the property will not be set if you have not set the `NSAllowsArbitraryLoads` flag in your app's Info.plist first.
+*In order to allow HTTP you have to either enable all HTTP requests via `NSAllowsArbitraryLoads` or add the explicit url to the `NSExceptionDomains` dictionary in your targets `Info.plist`
 
 ### Threshold
 

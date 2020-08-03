@@ -88,18 +88,7 @@ public class Connectivity: NSObject {
     public private(set) var isConnected: Bool = false
 
     /// Whether or not only HTTPS URLs should be used to check connectivity
-    public static var isHTTPSOnly: Bool = true {
-        didSet {
-            // Only set true if `allow arbitrary loads` is set
-            guard let bundleInfo = Bundle.main.infoDictionary,
-                let appTransportSecurity = bundleInfo["NSAppTransportSecurity"] as? [String: Any],
-                let allowsArbitraryLoads = appTransportSecurity["NSAllowsArbitraryLoads"] as? Bool,
-                allowsArbitraryLoads else {
-                isHTTPSOnly = true
-                return
-            }
-        }
-    }
+    public static var isHTTPSOnly: Bool = true
 
     /// Whether we are listening for changes in reachability (otherwise performing a one-off connectivity check)
     fileprivate var isObservingInterfaceChanges = false
